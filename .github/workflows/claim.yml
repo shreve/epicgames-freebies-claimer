@@ -15,6 +15,7 @@ jobs:
           EG_AUTH_JSON: ${{ secrets.EG_DEVICE_AUTH }}
         run: |
           mkdir "$GITHUB_WORKSPACE/data"
+          echo "$EG_AUTH_JSON"
           echo "$EG_AUTH_JSON" > $GITHUB_WORKSPACE/data/device_auths.json
           wget https://raw.githubusercontent.com/Revadike/epicgames-freebies-claimer/master/data/config.example.json \
             -O "$GITHUB_WORKSPACE/data/config.json"
